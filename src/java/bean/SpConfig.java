@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * @author zhangalong
  */
 @Configuration
-@ComponentScan
+//@ComponentScan(basePackages = {"bean","zal"})
+@ComponentScan()
 public class SpConfig {
 }
