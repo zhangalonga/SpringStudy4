@@ -1,4 +1,4 @@
-package java.bean;
+package cc;
 
 /**
  * created on 2019/2/20 18:18

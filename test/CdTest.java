@@ -1,3 +1,5 @@
+import cc.Cd;
+import cc.SpConfig;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
@@ -6,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.bean.Md;
+import cc.Md;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -17,15 +19,12 @@ import static org.junit.Assert.assertNotNull;
  * @author zhangalong
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = bean.SpConfig.class)
+@ContextConfiguration(classes = SpConfig.class)
 public class CdTest {
 //    @Autowired
-//    private bean.Cd cd ;
+//    private cc.Cd cd ;
 //
-//    @Test
-//    public void cdIsNull(){
-//        assertNotNull(cd);
-//    }
+//
 //
    @Rule
    public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
@@ -33,15 +32,18 @@ public class CdTest {
    @Autowired
    private Md md;
 
-//   @Autowired
-//   private bean.Cd cd;
+  @Autowired
+  private Cd cd;
 
-
+   @Test
+   public void cdIsNull(){
+        assertNotNull(cd);
+    }
 
    @Test
    public void play(){
       md.play();
-      assertEquals("KKKLLL",systemOutRule.getLog());
+      assertEquals("zhangalong"+"ri\n",systemOutRule.getLogWithNormalizedLineSeparator());
    }
 
 

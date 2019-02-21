@@ -1,4 +1,4 @@
-package bean;
+package cc;
 
 import org.springframework.stereotype.Component;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  *
  */
 @Component
-public class Sp implements bean.Cd {
+public class Sp implements Cd {
     private String title = "zhangalong";
     private String room = "ri";
 

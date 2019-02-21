@@ -1,4 +1,4 @@
-package bean;
+package cc;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * @author zhangalong
  */
 @Configuration
-//@ComponentScan(basePackages = {"bean","zal"})
+//@ComponentScan(basePackages = {"cc","zal"})
 @ComponentScan()
 public class SpConfig {
 }

@@ -1,4 +1,4 @@
-package bean;
+package cc;
 
 /**
  * created on 2019/2/18 18:53

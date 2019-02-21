@@ -1,10 +1,8 @@
-package java.bean;
+package cc;
 
-import bean.Cd;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import javax.inject.Inject;
 
 /**
  * created on 2019/2/20 18:18
@@ -14,7 +12,7 @@ import javax.inject.Inject;
 @Component
 public class CdPlayer implements Md{
 
-    private bean.Cd cd;
+    private Cd cd;
 
     //第一种自动装配，构造器上
     @Autowired
