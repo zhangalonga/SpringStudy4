@@ -3,38 +3,24 @@ package datas;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jndi.JndiObjectFactoryBean;
 
 import javax.sql.DataSource;
 
 /**
- * created on 2019/2/22 14:26
+ * created on 2019/2/22 14:44
  *
  * @author zhangalong
  */
 @Configuration
-public class Data_new {
-
-
-    /**
-     * 测试环境
-     * @return
-     */
-
-    @Bean(destroyMethod = "shutdown")
-    @Profile("dev")
-    public DataSource getDataSource(){
-        return new EmbeddedDatabaseBuilder().
-                addScript("classpath:schema.sql").addScript("classpath:test-data.sql").build();
-    }
-
+@Profile("prod")
+//正式环境被激活才会创建
+public class Data_new_3 {
     /**
      * 正式环境
      * @return
      */
     @Bean
-    @Profile("prod")
     public DataSource getNewDataSource(){
         final JndiObjectFactoryBean bean = new JndiObjectFactoryBean();
         bean.setJndiName("JDBC/MYDS");
