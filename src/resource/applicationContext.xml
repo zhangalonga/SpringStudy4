@@ -6,7 +6,7 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
-       ">
+     ">
     <bean id="A" class="zal.C">
         <constructor-arg ref="b"/>
     </bean>
@@ -22,10 +22,35 @@
     <aop:config>
         <aop:aspect ref="minstrel">
             <aop:pointcut id="say" expression="execution(* *.say(..))"/>
-            <aop:before  pointcut-ref="say" method="before"/>
+            <aop:before pointcut-ref="say" method="before"/>
             <aop:after pointcut-ref="say" method="after"/>
         </aop:aspect>
     </aop:config>
+
+    <bean id="blank" class="cc.BlankDisc">
+        <constructor-arg value="kkkkk"/>
+        <constructor-arg value="mmmmmm"/>
+        <!--<constructor-arg><null/></constructor-arg>-->
+        <!-- <null/>将null传给构造器 -->
+        <!-- 但是调用方法会出现npe -->
+        <constructor-arg>
+            <list>
+                <value>1</value>
+                <value>2</value>
+            </list>
+        </constructor-arg>
+
+    </bean>
+    <bean id="sp" class="cc.Sp"/>
+    <bean id="cdPlayer" class="cc.CdPlayer">
+        <constructor-arg ref="sp"/>
+    </bean>
+
+    <bean id="clank" class="cc.ClankDisc">
+        <property name="cd" ref="sp"/>
+    </bean>
+
+
 
 </beans>
 

@@ -1,5 +1,6 @@
 package cc;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,8 +9,14 @@ import org.springframework.context.annotation.Configuration;
  *
  * @author zhangalong
  */
-@Configuration
+//@Configuration
 //@ComponentScan(basePackages = {"cc","zal"})
-@ComponentScan()
+//@ComponentScan()
 public class SpConfig {
+
+    //使用代码中创建bean
+//    @Bean
+//    public Cd getCD(){
+//        return new Sp();
+//    }
 }
