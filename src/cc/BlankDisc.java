@@ -18,6 +18,11 @@ public class BlankDisc implements Cd {
         this.tracks = tracks;
     }
 
+    public BlankDisc(String title, String att) {
+        this.title = title;
+        this.ar = att;
+    }
+
     @Override
     public void play() {
         System.out.println(title+ar);
