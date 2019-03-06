@@ -63,6 +63,22 @@ http://www.springframework.org/schema/c"
  <bean id="a" class="cc.BlankDisc" c:_title="${disc.title}"/>
 
 
+
+    <aop:aspectj-autoproxy />
+    <!-- xml配置切面的pojo-->
+    <bean class="dd.Audience" id="audience"/>
+    <aop:config>
+        <aop:aspect ref="audience">
+            <aop:before method="" pointcut=""/>
+            <aop:after-returning method="" pointcut=""/>
+            <aop:after-throwing method="" pointcut=""/>
+            <aop:around method="" pointcut-ref=""/>
+        </aop:aspect>
+    </aop:config>
+
+
+
+
     <!--#{1} 最简单的SpEl表达式 -->
     #{T(System).currentTimeMillis()}
 </beans>
